@@ -1,16 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background: linear-gradient(120deg, #dfe9f3, #ffffff);
     margin: 0;
     padding: 0;
 }
 
 .quiz-container {
-    width: 70%;
-    margin: 20px auto;
+    width: 75%;
+    margin: 25px auto;
     background: white;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in;
 }
 
 h1, h2 {
@@ -18,14 +20,22 @@ h1, h2 {
 }
 
 #timer {
-    font-size: 18px;
     text-align: center;
-    margin-bottom: 15px;
-    color: red;
+    font-size: 18px;
+    color: #c0392b;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite alternate;
 }
 
 .question {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.question:hover {
+    background: #f7f9fb;
 }
 
 .question p {
@@ -35,19 +45,46 @@ h1, h2 {
 label {
     display: block;
     margin-left: 20px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
 }
 
 button {
     display: block;
-    margin: 20px auto;
-    padding: 10px 30px;
+    margin: 30px auto;
+    padding: 12px 35px;
     font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background: #2c3e50;
+    color: white;
     cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: #34495e;
+    transform: scale(1.05);
 }
 
 #result {
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
     margin-top: 20px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
 }

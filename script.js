@@ -1,29 +1,19 @@
-let timeLeft = 30 * 60; // 30 minutes
+let timeLeft = 40 * 60;
 const timerDisplay = document.getElementById("timer");
 
 const correctAnswers = {
-    q1: "a",
-    q2: "a",
-    q3: "b",
-    q4: "c",
-    q5: "b",
-    q6: "c",
-    q7: "a",
-    q8: "b",
-    q9: "b",
-    q10: "c"
+    q1:"a", q2:"a", q3:"c", q4:"b", q5:"b",
+    q6:"b", q7:"b", q8:"c", q9:"c", q10:"a",
+    q11:"b", q12:"b", q13:"c", q14:"b", q15:"a",
+    q16:"c", q17:"a", q18:"b", q19:"b", q20:"b"
 };
 
 function startTimer() {
     const timer = setInterval(() => {
-        let minutes = Math.floor(timeLeft / 60);
-        let seconds = timeLeft % 60;
-
-        timerDisplay.textContent =
-            `Time Left: ${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-
+        let m = Math.floor(timeLeft / 60);
+        let s = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${m}:${s < 10 ? "0" : ""}${s}`;
         timeLeft--;
-
         if (timeLeft < 0) {
             clearInterval(timer);
             submitQuiz();
@@ -33,17 +23,12 @@ function startTimer() {
 
 function submitQuiz() {
     let score = 0;
-    let total = Object.keys(correctAnswers).length;
-
     for (let q in correctAnswers) {
-        let selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === correctAnswers[q]) {
-            score++;
-        }
+        let ans = document.querySelector(`input[name="${q}"]:checked`);
+        if (ans && ans.value === correctAnswers[q]) score++;
     }
-
     document.getElementById("result").textContent =
-        `Your Score: ${score} / ${total}`;
+        `Your Score: ${score} / 20`;
 }
 
 startTimer();
