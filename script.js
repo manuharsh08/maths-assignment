@@ -23,12 +23,22 @@ function startTimer() {
 
 function submitQuiz() {
     let score = 0;
+
     for (let q in correctAnswers) {
-        let ans = document.querySelector(`input[name="${q}"]:checked`);
-        if (ans && ans.value === correctAnswers[q]) score++;
+        let selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+            score++;
+        }
     }
+
     document.getElementById("result").textContent =
         `Your Score: ${score} / 20`;
+
+    document.getElementById("scoreField").value = score;
+
+    setTimeout(() => {
+        document.getElementById("quizForm").submit();
+    }, 1500);
 }
 
 startTimer();

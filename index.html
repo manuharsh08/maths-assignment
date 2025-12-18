@@ -13,10 +13,30 @@
 
     <div id="timer">Time Left: 40:00</div>
 
-    <form id="quizForm">
+    <form id="quizForm"
+          action="https://formspree.io/f/abcdwxyz"
+          method="POST">
 
-        <!-- COMPLEX NUMBERS -->
-        <div class="question"><p>1. If z = 3 + 4i, then |z| equals:</p>
+        <!-- STUDENT DETAILS -->
+        <div class="student-info">
+            <label>
+                Name
+                <input type="text" name="student_name" required>
+            </label>
+
+            <label>
+                Roll Number
+                <input type="text" name="roll_number" required>
+            </label>
+        </div>
+
+        <!-- Hidden Fields -->
+        <input type="hidden" name="score" id="scoreField">
+        <input type="hidden" name="total" value="20">
+
+        <!-- QUESTIONS -->
+
+        <div class="question"><p>1. If z = 3 + 4i, then |z| is:</p>
             <label><input type="radio" name="q1" value="a"> 5</label>
             <label><input type="radio" name="q1" value="b"> 7</label>
             <label><input type="radio" name="q1" value="c"> 1</label>
@@ -37,7 +57,7 @@
             <label><input type="radio" name="q3" value="d"> –i</label>
         </div>
 
-        <div class="question"><p>4. If z + z̄ = 10, then Re(z) is:</p>
+        <div class="question"><p>4. If z + z̄ = 10, then Re(z) equals:</p>
             <label><input type="radio" name="q4" value="a"> 10</label>
             <label><input type="radio" name="q4" value="b"> 5</label>
             <label><input type="radio" name="q4" value="c"> –5</label>
@@ -65,14 +85,13 @@
             <label><input type="radio" name="q7" value="d"> –2ib</label>
         </div>
 
-        <div class="question"><p>8. The argument of a positive real number is:</p>
+        <div class="question"><p>8. Argument of a positive real number is:</p>
             <label><input type="radio" name="q8" value="a"> π</label>
             <label><input type="radio" name="q8" value="b"> π/2</label>
             <label><input type="radio" name="q8" value="c"> 0</label>
             <label><input type="radio" name="q8" value="d"> –π</label>
         </div>
 
-        <!-- BINOMIAL THEOREM -->
         <div class="question"><p>9. Number of terms in (a + b)⁸ is:</p>
             <label><input type="radio" name="q9" value="a"> 7</label>
             <label><input type="radio" name="q9" value="b"> 8</label>
@@ -80,14 +99,14 @@
             <label><input type="radio" name="q9" value="d"> 10</label>
         </div>
 
-        <div class="question"><p>10. The general term of (a + b)ⁿ is:</p>
+        <div class="question"><p>10. General term of (a + b)ⁿ is:</p>
             <label><input type="radio" name="q10" value="a"> ⁿCᵣ aⁿ⁻ʳ bʳ</label>
             <label><input type="radio" name="q10" value="b"> ⁿCᵣ aʳ bʳ</label>
-            <label><input type="radio" name="q10" value="c"> ⁿCᵣ aⁿ bʳ</label>
-            <label><input type="radio" name="q10" value="d"> aʳ bⁿ⁻ʳ</label>
+            <label><input type="radio" name="q10" value="c"> aⁿ bʳ</label>
+            <label><input type="radio" name="q10" value="d"> aʳ bⁿ</label>
         </div>
 
-        <div class="question"><p>11. The middle term of (x + y)⁴ is:</p>
+        <div class="question"><p>11. Middle term of (x + y)⁴ is:</p>
             <label><input type="radio" name="q11" value="a"> 2nd</label>
             <label><input type="radio" name="q11" value="b"> 3rd</label>
             <label><input type="radio" name="q11" value="c"> 4th</label>
@@ -101,11 +120,11 @@
             <label><input type="radio" name="q12" value="d"> 10</label>
         </div>
 
-        <div class="question"><p>13. Expansion of (a − b)⁵ contains:</p>
+        <div class="question"><p>13. Expansion of (a − b)⁵ has:</p>
             <label><input type="radio" name="q13" value="a"> All positive terms</label>
             <label><input type="radio" name="q13" value="b"> All negative terms</label>
             <label><input type="radio" name="q13" value="c"> Alternating signs</label>
-            <label><input type="radio" name="q13" value="d"> Only one negative term</label>
+            <label><input type="radio" name="q13" value="d"> One negative term</label>
         </div>
 
         <div class="question"><p>14. Sum of coefficients of (x − 2)⁶ is:</p>
@@ -115,14 +134,14 @@
             <label><input type="radio" name="q14" value="d"> 64</label>
         </div>
 
-        <div class="question"><p>15. The term independent of x in (x + 1/x)⁶ is:</p>
+        <div class="question"><p>15. Term independent of x in (x + 1/x)⁶ is:</p>
             <label><input type="radio" name="q15" value="a"> 20</label>
             <label><input type="radio" name="q15" value="b"> 15</label>
             <label><input type="radio" name="q15" value="c"> 10</label>
             <label><input type="radio" name="q15" value="d"> 6</label>
         </div>
 
-        <div class="question"><p>16. The coefficient of x²y³ in (x + y)⁵ is:</p>
+        <div class="question"><p>16. Coefficient of x²y³ in (x + y)⁵ is:</p>
             <label><input type="radio" name="q16" value="a"> 5</label>
             <label><input type="radio" name="q16" value="b"> 10</label>
             <label><input type="radio" name="q16" value="c"> 20</label>
@@ -136,21 +155,21 @@
             <label><input type="radio" name="q17" value="d"> 9</label>
         </div>
 
-        <div class="question"><p>18. In (1 + x)¹⁰, coefficient of x⁵ is:</p>
+        <div class="question"><p>18. Coefficient of x⁵ in (1 + x)¹⁰ is:</p>
             <label><input type="radio" name="q18" value="a"> 120</label>
             <label><input type="radio" name="q18" value="b"> 252</label>
             <label><input type="radio" name="q18" value="c"> 210</label>
             <label><input type="radio" name="q18" value="d"> 10</label>
         </div>
 
-        <div class="question"><p>19. If n is odd, number of terms in (a + b)ⁿ is:</p>
+        <div class="question"><p>19. Number of terms in (a + b)ⁿ is:</p>
             <label><input type="radio" name="q19" value="a"> n</label>
             <label><input type="radio" name="q19" value="b"> n + 1</label>
             <label><input type="radio" name="q19" value="c"> n − 1</label>
             <label><input type="radio" name="q19" value="d"> 2n</label>
         </div>
 
-        <div class="question"><p>20. If (1 + x)ⁿ has 11 terms, n equals:</p>
+        <div class="question"><p>20. If (1 + x)ⁿ has 11 terms, then n equals:</p>
             <label><input type="radio" name="q20" value="a"> 9</label>
             <label><input type="radio" name="q20" value="b"> 10</label>
             <label><input type="radio" name="q20" value="c"> 11</label>
